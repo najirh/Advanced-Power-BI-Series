@@ -1,0 +1,10 @@
+DateTable = 
+ADDCOLUMNS(
+            // CALENDARAUTO(), // This is creating date range from datasets
+            CALENDAR(DATE(2025, 01, 01), DATE(2025, 10, 16)),
+            "Month Number", MONTH([Date]),
+            "Month Start Date", DATE(YEAR([Date]), MONTH([Date]), 01),
+            "Month Name", FORMAT([Date], "MMM YY"),
+            "Quarter", "Q" & FORMAT([Date], "Q YYYY"),
+            "Week Number", WEEKNUM([Date])
+            )
